@@ -13,8 +13,9 @@ import java.util.Date;
 import java.util.Set;
 
 @NodeEntity
-public class User extends BaseEntity {
+public class User extends   BaseEntity {
 	private final static String FRIEND_TO_FRIEND = "FRIEND_TO_FRIEND";
+
 
 
     @Indexed
