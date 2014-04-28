@@ -1,7 +1,7 @@
 package com.springapp.mvc;
 
 import com.artlongs.webapp.model.World;
-import com.artlongs.webapp.service.GalaxyService;
+import com.artlongs.webapp.service.WorldService;
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 import org.apache.commons.io.FileUtils;
@@ -20,7 +20,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.Collection;
 
 import static org.hamcrest.CoreMatchers.anyOf;
@@ -34,7 +33,7 @@ import static org.junit.internal.matchers.StringContains.containsString;
 public class GalaxyServiceTests {
 
     @Autowired
-    private GalaxyService galaxyService;
+    private WorldService galaxyService;
 
     @Autowired
     private Neo4jTemplate neo4jTemplate;

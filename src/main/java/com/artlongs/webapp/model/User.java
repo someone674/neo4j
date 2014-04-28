@@ -1,13 +1,9 @@
 package com.artlongs.webapp.model;
 
 import com.artlongs.framework.model.BaseEntity;
-import org.apache.commons.lang.time.DateUtils;
 import org.neo4j.graphdb.Direction;
 import org.springframework.data.neo4j.annotation.*;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.Year;
 import java.util.Date;
 import java.util.Set;
@@ -29,7 +25,7 @@ public class User extends   BaseEntity {
 
     @Fetch
     @RelatedTo(type = FRIEND_TO_FRIEND, direction = Direction.BOTH)
-    private Set<User> friend;
+    private Set<User> friends;
 
     public User() {
     }
@@ -69,12 +65,12 @@ public class User extends   BaseEntity {
         this.age = age;
     }
 
-    public Set<User> getFriend() {
-        return friend;
+    public Set<User> getFriends() {
+        return friends;
     }
 
-    public void setFriend(Set<User> friend) {
-        this.friend = friend;
+    public void setFriends(Set<User> friends) {
+        this.friends = friends;
     }
 
 

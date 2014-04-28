@@ -2,9 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<c:if test="${not empty world}">
+<c:if test="${not empty worldList}">
     <ul>
-        <c:forEach items="${world}" var="w">
+        <c:forEach items="${worldList}" var="w">
             <li>
                 ${w.name} --- ${w.moons}<br/>
             </li>
