@@ -5,14 +5,13 @@ import org.neo4j.graphdb.Direction;
 import org.springframework.data.neo4j.annotation.*;
 
 import java.time.Year;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Set;
 
 @NodeEntity
-public class User extends   BaseEntity {
-	private final static String FRIEND_TO_FRIEND = "FRIEND_TO_FRIEND";
-
-
+public class User extends BaseEntity {
+    private final static String FRIEND_TO_FRIEND = "FRIEND_TO_FRIEND";
 
     @Indexed
     private String name;
@@ -30,10 +29,10 @@ public class User extends   BaseEntity {
     public User() {
     }
 
-    public User(String name) {
+    public User(String name,String birthday) {
         this.name = name;
-        if (this.birthday != null) {
-            Year birthYear = Year.parse(this.birthday.toString());
+        if (birthday != null && birthday.length() > 0) {
+            Year birthYear = Year.parse(birthday, DateTimeFormatter.ISO_LOCAL_DATE);
             if (Year.now().isAfter(birthYear)) {
                 this.age = Year.now().getValue() - birthYear.getValue();
             }
@@ -72,9 +71,6 @@ public class User extends   BaseEntity {
     public void setFriends(Set<User> friends) {
         this.friends = friends;
     }
-
-
-	
 
 
 }

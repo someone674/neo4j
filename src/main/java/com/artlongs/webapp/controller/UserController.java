@@ -2,6 +2,7 @@ package com.artlongs.webapp.controller;/**
  * Created by Administrator on 14-4-6.
  */
 
+import com.artlongs.webapp.service.UserService;
 import com.artlongs.webapp.service.WorldService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -24,22 +26,20 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-
-    private WorldService galaxyService;
     private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
-    @Autowired
-    public UserController(WorldService galaxyService) {
-        this.galaxyService = galaxyService;
-    }
+    @Resource
+    private UserService userService;
 
-    @RequestMapping({"","/index"})
+
+
+    @RequestMapping("/list")
     public String index(HttpServletRequest req ,Model model){
 
         model.addAttribute("message", "HELLO LITON!");
-        model.addAttribute("world",galaxyService.makeSomeWorlds());
+        model.addAttribute("users", userService.makeSomeUsers());
 
-        return "/hello";
+        return "/user";
     }
 
 }

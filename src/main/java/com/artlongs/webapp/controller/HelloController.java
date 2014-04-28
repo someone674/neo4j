@@ -26,9 +26,10 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("")
 public class HelloController {
 
+    private static final Logger log = LoggerFactory.getLogger(HelloController.class);
+
     @Resource
     private WorldService worldService;
-    private static final Logger log = LoggerFactory.getLogger(HelloController.class);
 
 
     @RequestMapping({"","/index"})
