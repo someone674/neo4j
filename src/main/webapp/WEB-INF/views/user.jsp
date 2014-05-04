@@ -6,7 +6,9 @@
     <ul>
         <c:forEach items="${users}" var="u">
             <li>
-                ${u.name} --- ${u.age}<br/>
+                ${u.name} --- ${u.age} -- ${u.createDate}<br/>
+
+                    <c:forEach items="${u.friends}" var="friend"> FRIEND ===> ${friend.name}</c:forEach>
             </li>
         </c:forEach>
     </ul>

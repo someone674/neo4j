@@ -1,8 +1,11 @@
-package com.artlongs.framework.model;
+package com.artlongs.base.model;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.neo4j.annotation.GraphId;
-import org.springframework.data.neo4j.annotation.Indexed;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.util.Date;
@@ -15,7 +18,14 @@ import java.util.Date;
 public abstract class BaseEntity implements Serializable {
 
     @GraphId
-    private Long id;
+    private Long graphId;
+
+
+    @Id
+    @Column(length = 32, nullable = true)
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
+    private String id;
 
     private Date createDate;// 创建日期
     private Date modifyDate;// 修改日期
@@ -27,41 +37,21 @@ public abstract class BaseEntity implements Serializable {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass().getPackage() != obj.getClass().getPackage()) {
-            return false;
-        }
-        final BaseEntity other = (BaseEntity) obj;
-        if (id == null) {
-            if (other.getId() != null) {
-                return false;
-            }
-        } else if (!id.equals(other.getId())) {
-            return false;
-        }
-        return true;
+    public boolean equals( Object obj ) {
+        return obj instanceof BaseEntity && id.equals( ((BaseEntity) obj).getId() );
     }
+
 
     @Override
     public String toString() {
-        return String.format("obj{id='%s'}", id);
+        return String.format("obj{graphId='%s'}", graphId);
     }
 
     // ============= getters & setters =============
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public Long getGraphId() {
+        return graphId;
     }
 
     public Date getCreateDate() {
@@ -78,5 +68,13 @@ public abstract class BaseEntity implements Serializable {
 
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

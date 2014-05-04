@@ -1,6 +1,6 @@
 package com.artlongs.webapp.model;
 
-import com.artlongs.framework.model.BaseEntity;
+import com.artlongs.base.model.BaseEntity;
 import org.neo4j.graphdb.Direction;
 import org.springframework.data.neo4j.annotation.*;
 

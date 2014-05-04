@@ -1,4 +1,4 @@
-package com.artlongs.framework.controller;
+package com.artlongs.base.controller;
 
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.validation.BindingResult;

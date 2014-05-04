@@ -66,7 +66,7 @@ public class GalaxyServiceTests {
         galaxyService.makeSomeWorlds();
 
         for (World world : galaxyService.getAllWorlds()) {
-            World foundWorld = galaxyService.findWorldById(world.getId());
+            World foundWorld = galaxyService.findWorldById(world.getGraphId());
             assertNotNull(foundWorld);
         }
     }

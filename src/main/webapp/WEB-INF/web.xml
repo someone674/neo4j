@@ -4,7 +4,16 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
     http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-    <display-name>Job5156</display-name>
+    <display-name>artlongs</display-name>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:/spring.xml
+            classpath:/spring-security.xml
+        </param-value>
+    </context-param>
+
 
     <filter>
         <filter-name>encodingFilter</filter-name>
@@ -18,54 +27,54 @@
             <param-value>true</param-value>
         </init-param>
     </filter>
-<!--    <filter>
-        <filter-name>OpenSessionInViewFilter</filter-name>
-        <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
-        <init-param>
-            <param-name>excludeSuffixs</param-name>
-            <param-value>js,css,jpg,gif</param-value>
-        </init-param>
-        <init-param>
-            <param-name>sessionFactoryBeanName</param-name>
-            <param-value>sessionFactory</param-value>
-        </init-param>
-    </filter>
-    <filter>
-        <filter-name>OpenSessionInViewFilterSlave</filter-name>
-        <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
-        <init-param>
-            <param-name>excludeSuffixs</param-name>
-            <param-value>js,css,jpg,gif</param-value>
-        </init-param>
-        <init-param>
-            <param-name>sessionFactoryBeanName</param-name>
-            <param-value>sessionFactorySlave</param-value>
-        </init-param>
-    </filter>-->
+
+    <!--    <filter>
+            <filter-name>OpenSessionInViewFilter</filter-name>
+            <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+            <init-param>
+                <param-name>excludeSuffixs</param-name>
+                <param-value>js,css,jpg,gif</param-value>
+            </init-param>
+            <init-param>
+                <param-name>sessionFactoryBeanName</param-name>
+                <param-value>sessionFactory</param-value>
+            </init-param>
+        </filter>
+        <filter>
+            <filter-name>OpenSessionInViewFilterSlave</filter-name>
+            <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+            <init-param>
+                <param-name>excludeSuffixs</param-name>
+                <param-value>js,css,jpg,gif</param-value>
+            </init-param>
+            <init-param>
+                <param-name>sessionFactoryBeanName</param-name>
+                <param-value>sessionFactorySlave</param-value>
+            </init-param>
+        </filter>-->
 
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-<!--    <filter-mapping>
-        <filter-name>OpenSessionInViewFilter</filter-name>
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    <filter-mapping>
-        <filter-name>OpenSessionInViewFilterSlave</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>-->
+    <!--    <filter-mapping>
+            <filter-name>OpenSessionInViewFilter</filter-name>
+            <url-pattern>/*</url-pattern>
+        </filter-mapping>
+        <filter-mapping>
+            <filter-name>OpenSessionInViewFilterSlave</filter-name>
+            <url-pattern>/*</url-pattern>
+        </filter-mapping>-->
 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>
-            classpath:/spring.xml
-  <!--          classpath:/applicationContext-resources.xml
-            classpath:/applicationContext-dao.xml
-            classpath:/applicationContext-service.xml
-            classpath:/applicationContext-task.xml-->
-        </param-value>
-    </context-param>
+
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
