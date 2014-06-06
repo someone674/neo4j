@@ -34,6 +34,7 @@ public class UserController {
 
         model.addAttribute("message", "HELLO LITON!");
         model.addAttribute("users", userService.makeSomeUsers());
+        model.addAttribute("show", "I'm is linton.");
 
         return "/user";
     }
