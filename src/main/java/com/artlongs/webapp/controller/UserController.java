@@ -1,5 +1,6 @@
 package com.artlongs.webapp.controller;
 
+import com.artlongs.base.controller.BaseController;
 import com.artlongs.webapp.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BaseController {
     private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
     @Resource
