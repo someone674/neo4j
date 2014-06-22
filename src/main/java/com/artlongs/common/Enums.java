@@ -2,6 +2,9 @@ package com.artlongs.common;
 
 public class Enums {
 
+    /**
+     * 婚姻状态
+     */
     public enum Marryage {
         SECRECY(0,"保密"),
         SINGLE(1,"未婚"),
@@ -33,20 +36,26 @@ public class Enums {
         }
     }
 
+    /**
+     * 血型
+     */
     public enum BooldType{
         A,B,O,Hu,Hd
     }
 
-    public enum BioTitle{
+    /**
+     * 男性标签
+     */
+    public enum ManLable {
 
-        SOFT(1, "温柔"),
-        HANS(2,"士"),
-        STRONG(3,"强壮");
+        SOFT(11, "温和"),
+        GENTLEMAN(12,"绅士"),
+        STRONG(13,"强壮");
 
         private int key;
-        private String name;
-        BioTitle(int key,String name){
-            this.name = name;
+        private String value;
+        ManLable(int key, String value){
+            this.value = value;
             this.key = key;
         }
 
@@ -58,16 +67,48 @@ public class Enums {
             this.key = key;
         }
 
-        public String getName() {
-            return name;
+        public String getValue() {
+            return value;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+    public enum WomenLable {
+
+        SOFT(21, "温柔"),
+        GENTLEMAN(22,"娇小"),
+        STRONG(23,"丰满");
+
+        private int key;
+        private String value;
+        WomenLable(int key, String value){
+            this.value = value;
+            this.key = key;
+        }
+
+        public int getKey() {
+            return key;
+        }
+
+        public void setKey(int key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
         }
     }
 
-    public enum Finding {
+    /**
+     * 交往趋向
+     */
+    public static enum Finding {
         FRENDS(1, "朋友"),
         PRANER(2,"伴侣"),
         ONENIGHT(3,"一夜情");

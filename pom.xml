@@ -327,33 +327,23 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <includes>
-                        <include>**/*Tests.java</include>
-                    </includes>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
 
+
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.9.v20130131</version>
+                <version>9.0.5.v20130815</version>
                 <configuration>
-                    <scanIntervalSeconds>0</scanIntervalSeconds>
-                    <connectors>
-                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                            <port>80</port>
-                        </connector>
-                    </connectors>
-                    <webAppConfig>
-                        <contextPath>/</contextPath>
-                    </webAppConfig>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <contextXml>src/test/java/jetty-contexts.xml</contextXml>
+                    <!--<webAppConfig>-->
+                        <!--<defaultsDescriptor>src/test/java/webdefault.xml</defaultsDescriptor>-->
+                        <!--<contextPath>/solr</contextPath>-->
+                    <!--</webAppConfig>-->
                 </configuration>
             </plugin>
 

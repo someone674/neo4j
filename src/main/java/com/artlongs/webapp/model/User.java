@@ -13,6 +13,7 @@ import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @NodeEntity
@@ -58,14 +59,16 @@ public class User extends BaseEntity {
 
     private Enums.Marryage marriage;
     private Enums.BooldType bloodType;
-    private Enums.BioTitle selfTitle;
-    private Enums.BooldType loveTitle;
+    private Integer bioLable;
+    private Integer loveLable;
 
     private Integer area;
     private Integer city;
 
     private Integer salary;
     private Integer job;
+
+    private Set<Enums.Finding> findingType;    //交往趋向
 
     private Integer mobileActivation;     //手机激活：0：未激活；1：已激活；
     private Integer identification;       //实名认证：0：未认证；1：已认证；
@@ -183,5 +186,191 @@ public class User extends BaseEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
+    public Integer getHeight() {
+        return height;
+    }
+
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+
+    public String getIdNumber() {
+        return idNumber;
+    }
+
+    public void setIdNumber(String idNumber) {
+        this.idNumber = idNumber;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getHomepage() {
+        return homepage;
+    }
+
+    public void setHomepage(String homepage) {
+        this.homepage = homepage;
+    }
+
+    public String getQq() {
+        return qq;
+    }
+
+    public void setQq(String qq) {
+        this.qq = qq;
+    }
+
+    public Integer getDegree() {
+        return degree;
+    }
+
+    public void setDegree(Integer degree) {
+        this.degree = degree;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public Enums.Marryage getMarriage() {
+        return marriage;
+    }
+
+    public void setMarriage(Enums.Marryage marriage) {
+        this.marriage = marriage;
+    }
+
+    public Enums.BooldType getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(Enums.BooldType bloodType) {
+        this.bloodType = bloodType;
+    }
+
+    public Integer getBioLable() {
+        return bioLable;
+    }
+
+    public void setBioLable(Integer bioLable) {
+        this.bioLable = bioLable;
+    }
+
+    public Integer getLoveLable() {
+        return loveLable;
+    }
+
+    public void setLoveLable(Integer loveLable) {
+        this.loveLable = loveLable;
+    }
+
+    public Integer getArea() {
+        return area;
+    }
+
+    public void setArea(Integer area) {
+        this.area = area;
+    }
+
+    public Integer getCity() {
+        return city;
+    }
+
+    public void setCity(Integer city) {
+        this.city = city;
+    }
+
+    public Integer getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Integer salary) {
+        this.salary = salary;
+    }
+
+    public Integer getJob() {
+        return job;
+    }
+
+    public void setJob(Integer job) {
+        this.job = job;
+    }
+
+    public Set<Enums.Finding> getFindingType() {
+        return findingType;
+    }
+
+    public void setFindingType(Enums.Finding finding) {
+        Set<Enums.Finding> findings = getFindingType();
+        findings.add(finding);
+        this.findingType = findings;
+    }
+
+    public Integer getMobileActivation() {
+        return mobileActivation;
+    }
+
+    public void setMobileActivation(Integer mobileActivation) {
+        this.mobileActivation = mobileActivation;
+    }
+
+    public Integer getIdentification() {
+        return identification;
+    }
+
+    public void setIdentification(Integer identification) {
+        this.identification = identification;
+    }
+
+    public Integer getMailActivation() {
+        return mailActivation;
+    }
+
+    public void setMailActivation(Integer mailActivation) {
+        this.mailActivation = mailActivation;
+    }
+
+    public Date getLoginIp() {
+        return loginIp;
+    }
+
+    public void setLoginIp(Date loginIp) {
+        this.loginIp = loginIp;
+    }
+
+    public Date getLoginDate() {
+        return loginDate;
+    }
+
+    public void setLoginDate(Date loginDate) {
+        this.loginDate = loginDate;
     }
 }

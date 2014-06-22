@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import static com.artlongs.common.Enums.Finding;
+
 /**
  * Function:
  * ========================================
@@ -36,6 +38,7 @@ public class UserController extends BaseController {
         model.addAttribute("message", "HELLO LITON!");
         model.addAttribute("users", userService.makeSomeUsers());
         model.addAttribute("show", "I'm is linton.");
+
 
         return "/user";
     }

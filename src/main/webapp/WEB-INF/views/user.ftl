@@ -1,8 +1,8 @@
 <ul>
 <#list users as u>
     <li>
-    ${u.name} --- ${u.age} -- ${u.createDate}<br/>
-        <#list u.friends as friend> FRIEND ===> ${friend.name}</#list>
+    ${u.value} --- ${u.age} -- ${u.createDate}<br/>
+        <#list u.friends as friend> FRIEND ===> ${friend.value}</#list>
     </li>
 </#list>
     ${show}

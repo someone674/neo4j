@@ -1,8 +1,8 @@
 package com.artlongs.webapp.service;
 
+import com.artlongs.common.Enums;
 import com.artlongs.webapp.dao.UserDao;
 import com.artlongs.webapp.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -14,7 +14,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -70,6 +69,8 @@ public class UserService  implements UserDetailsService {
         users.add(jocky);
         users.add(eya);
 
+        leeton.setFindingType(Enums.Finding.FRENDS);
+
         // userDao.save(users);
         
         return users;
@@ -78,7 +79,7 @@ public class UserService  implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String account) throws UsernameNotFoundException, DataAccessException {
         final User user = findUser(account);
-        if (user==null) throw new UsernameNotFoundException("Username not found",account);
+        if (user == null) throw new UsernameNotFoundException("Username not found", account);
         return new UserDetail(user);
     }
 

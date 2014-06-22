@@ -19,15 +19,15 @@ pageEncoding="UTF-8"%>
 		<form action="/auth/register" method="post" >
       <p>
         <label for="j_username">Login:</label>
-        <input id="j_username" name="j_username" type="text" value="${j_username}"/>
+        <input id="j_username" value="j_username" type="text" value="${j_username}"/>
       </p>
       <p>
         <label for="j_displayname">Name:</label>
-        <input id="j_displayname" name="j_displayname" type="text" value="${j_displayname}"/>
+        <input id="j_displayname" value="j_displayname" type="text" value="${j_displayname}"/>
       </p>
       <p>
         <label for="j_password">Password:</label>
-        <input id="j_password" name="j_password" type="password" />
+        <input id="j_password" value="j_password" type="password" />
       </p>
       <input  type="submit" value="Register"/>
     </form>
