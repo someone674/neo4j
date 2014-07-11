@@ -6,7 +6,7 @@
     <ul>
         <c:forEach items="${worldList}" var="w">
             <li>
-                ${w.value} --- ${w.moons}<br/>
+                ${w.name} --- ${w.moons}<br/>
             </li>
         </c:forEach>
     </ul>

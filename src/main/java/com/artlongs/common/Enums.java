@@ -109,7 +109,7 @@ public class Enums {
      * 交往趋向
      */
     public static enum Finding {
-        FRENDS(1, "朋友"),
+        FRIEND(1, "朋友"),
         PRANER(2,"伴侣"),
         ONENIGHT(3,"一夜情");
 

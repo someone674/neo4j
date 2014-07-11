@@ -330,6 +330,7 @@ public class User extends BaseEntity {
 
     public void setFindingType(Enums.Finding finding) {
         Set<Enums.Finding> findings = getFindingType();
+        if(findings == null){findings =  new HashSet<>() ;}
         findings.add(finding);
         this.findingType = findings;
     }
