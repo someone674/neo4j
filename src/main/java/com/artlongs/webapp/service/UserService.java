@@ -69,7 +69,7 @@ public class UserService  implements UserDetailsService {
         users.add(jocky);
         users.add(eya);
 
-        leeton.setFindingType(Enums.Finding.FRENDS);
+        leeton.setFindingType(Enums.Finding.FRIEND);
 
         // userDao.save(users);
         
@@ -79,7 +79,7 @@ public class UserService  implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String account) throws UsernameNotFoundException, DataAccessException {
         final User user = findUser(account);
-        if (user == null) throw new UsernameNotFoundException("Username not found", account);
+        if (user == null) throw new UsernameNotFoundException("Username not found");
         return new UserDetail(user);
     }
 

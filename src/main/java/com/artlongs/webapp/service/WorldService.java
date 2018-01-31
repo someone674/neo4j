@@ -33,11 +33,11 @@ public class WorldService {
 	}
 	
 	public World findWorldByName(String name) {
-		return worldDao.findByPropertyValue("name", name);
+		return worldDao.findBySchemaPropertyValue("name", name);
 	}
 	
 	public Iterable<World> findAllByNumberOfMoons(int numberOfMoons) {
-		return worldDao.findAllByPropertyValue("moons", numberOfMoons);
+		return worldDao.findAllBySchemaPropertyValue("moons", numberOfMoons);
 	}
 	
 	public Collection<World> makeSomeWorlds() {
